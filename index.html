@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1,h2{
+            text-align: center;
+            color: aliceblue;
+        }
+        b{
+            color: brown;
+        }
+        dl,ol,p{
+            color: aliceblue;
+            margin: 30px;
+        }
+        pre{color: aquamarine;margin: 50px;}
+    </style>
+</head>
+<body>
+    <h1>JS INTERVIEW QUESTIONS</h1>
+    <h2>DAY4</h2>
+    <hr>
+    <p><b>1-Explain Local Scope, Block Scope, Functional Scope and Scope Chain in javascript</b></p>
+    <hr>
+    <p><b>2-What is difference between null and undefined ?</b></p>
+    <p>Null and undefined values are eqaual in javascript. undefined when memmory alocatted but value are not assign given undefined. <pre>var q;
+        console.log(q);
+          =undefined</pre> and in null value is assign to a variable <pre>var q=null
+            console.log(q);</pre>
+          </p>
+    <hr>
+    <p><b>3-What is an event loop and call stack</b></p>
+    <p>The event loop is a constantly running process that monitors both the callback queue and the call stack. If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback queue to the call stack <br>JavaScript can do one single thing at a time because it has only one call stack.
+
+        The call stack is a mechanism that helps the JavaScript interpreter to keep track of the functions that a script calls.</p>
+    <hr>
+    <p><b>4-What are promises and why do we need them?</b></p>
+    <p>Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell.</p>
+   
+    <dl>
+        <dt> Benefits of Promises </dt><dd>Improves Code Readability</dd><dd>Better handling of asynchronous operations</dd><dd>Better flow of control definition in asynchronous logic</dd>
+    <dd>Better Error Handling</dd></dl>
+
+    <p>promise has four state;
+        <ol><li>fulfiled</li>
+        <li>settled</li>
+    <li>pending</li>
+<li>rejected</li></ol>
+    </p>
+    <pre>var pro=new Promise(function(resove,reject){
+        var a=4;
+        if(a==4){
+            resove()
+        }
+        else{
+            reject()
+        }
+    })
+    pro.then((result)=>{console.log("yes")})
+    pro.catch((error)=>{console.log("no")})
+    </pre>
+
+
+
+    <hr>
+    <p><b>5-What is promise chaining</b></p>
+    <p>use in multiple time then function call is known as promise chaing . for awading promise chaing we use promise.all keyword in javascript</p>
+    <pre>let p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(10);
+        },2000);
+    });
+    
+    p.then((result) => {
+        console.log(result+10);
+       return result
+    }).then((result) => {
+        console.log(result);
+        return result*50;
+    });</pre>
+    <hr>
+    
+    
+    <p><b>6-What are pure functions?</b></p>
+    <p>pure function :
+         pure function are those function that accept an input and returns a value without modifying any data outside its scope.
+    </p>
+    <pre>var x=10;
+        function add (a,b){
+        sum=a+b;
+        console.log(sum);
+    }
+    
+    add(23,43)</pre>
+    <hr>
+    <p><b>7-Give an example of async/await</b></p>
+    <pre>async function fun(){
+        console.log("hello");
+       await console.log("rishabh")
+        console.log("lko");
+        console.log("266061")
+        
+    }
+    fun()
+    console.log("ertyu")
+    console.log("tyuio");</pre>
+  <hr>
+  <script src="./index.js"></script>
+   
+</body>
+</html>
